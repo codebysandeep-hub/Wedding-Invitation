@@ -297,7 +297,7 @@ body.entered .hero .monogram{animation:monoIn 1.8s .2s cubic-bezier(.2,.8,.2,1) 
 .venue-art .twinkle:nth-child(2n){animation-delay:-.8s}
 .venue-art .swag{animation:swag 3.5s ease-in-out infinite alternate; transform-box:fill-box; transform-origin:top center}
 .venue-art .rays{transform-box:fill-box; transform-origin:center; animation:spin 40s linear infinite}
-.save-venue{width:100%; max-width:560px; margin:1.2rem auto 0}
+.save-venue{width:100%; max-width:560px; margin:0 auto 1.4rem}
 @keyframes swag{to{transform:scaleY(1.06)}}
 .address{margin:.6rem 0 1.4rem; font-size:1.2rem}
 
