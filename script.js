@@ -327,9 +327,9 @@
     if (!svg) return;
     const defs = el('defs', {}, svg);
     const grad = el('radialGradient', { id: 'heroGlow' }, defs);
-    el('stop', { offset: '0', 'stop-color': '#fff6d8', 'stop-opacity': '.95' }, grad);
-    el('stop', { offset: '.55', 'stop-color': '#f8dfa0', 'stop-opacity': '.45' }, grad);
-    el('stop', { offset: '1', 'stop-color': '#f1d48e', 'stop-opacity': '0' }, grad);
+    el('stop', { offset: '0', 'stop-color': '#ffffff', 'stop-opacity': '.9' }, grad);
+    el('stop', { offset: '.55', 'stop-color': '#fbf3dc', 'stop-opacity': '.35' }, grad);
+    el('stop', { offset: '1', 'stop-color': '#ffffff', 'stop-opacity': '0' }, grad);
     el('circle', { r: 200, fill: 'url(#heroGlow)' }, svg);
     const g = el('g', { fill: 'none', stroke: '#c9973f', 'stroke-width': 1.2 }, svg);
     [62, 104, 146, 176, 192].forEach((r, i) => el('circle', { r, 'stroke-width': i === 4 ? 0.8 : 1.2 }, g));
@@ -555,15 +555,6 @@
     (document.fonts ? document.fonts.ready : Promise.resolve()).then(init);
     addEventListener('resize', init);
   })();
-
-  /* ---------------- Share ---------------- */
-  $('#shareBtn').addEventListener('click', async () => {
-    const data = { title: 'Sandeep & Divyanshi · Shubh Vivah', text: 'You are invited! 26 January 2027 · Gautam Himtaj Resorts, Varanasi', url: location.href };
-    try {
-      if (navigator.share) await navigator.share(data);
-      else { await navigator.clipboard.writeText(`${data.text}\n${data.url}`); alert('Link copied!'); }
-    } catch (e) {}
-  });
 
   /* ---------------- Reveal on scroll ---------------- */
   const io = new IntersectionObserver((entries) => entries.forEach((e) => {

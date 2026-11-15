@@ -11,10 +11,10 @@ html{scroll-behavior:smooth}
 body{
   font-family:var(--en); color:var(--teal); font-size:1.15rem; line-height:1.6; overflow-x:hidden;
   background:var(--paper),
-    radial-gradient(ellipse 60% 40% at 15% 20%,rgba(255,255,255,.9),transparent 70%),
-    radial-gradient(ellipse 50% 35% at 85% 55%,rgba(255,255,255,.75),transparent 70%),
-    radial-gradient(ellipse 70% 40% at 30% 90%,rgba(255,255,255,.8),transparent 70%),
-    linear-gradient(180deg,#b9dcec,#d6edf6 45%,#c4e3f0);
+    radial-gradient(ellipse 60% 40% at 15% 20%,rgba(255,255,255,.85),transparent 70%),
+    radial-gradient(ellipse 50% 35% at 85% 55%,rgba(255,255,255,.7),transparent 70%),
+    radial-gradient(ellipse 70% 40% at 30% 90%,rgba(255,255,255,.75),transparent 70%),
+    linear-gradient(180deg,#f6ead2,#fbf4e6 45%,#f4e6cc);
   background-attachment:fixed; background-size:cover,auto,auto,auto,auto;
 }
 body.locked{overflow:hidden}
@@ -130,17 +130,19 @@ body.entered .hero .monogram{animation:monoIn 1.8s .2s cubic-bezier(.2,.8,.2,1) 
 @keyframes monoIn{to{opacity:1; transform:none}}
 
 /* ========== 1. Hero ========== */
-.hero{min-height:100vh; text-align:center; padding-top:clamp(4.5rem,9vw,6rem); display:flex; flex-direction:column; align-items:center; overflow:hidden; max-width:none}
+.hero{min-height:100vh; text-align:center; padding-top:clamp(4.5rem,9vw,6rem);
+  background:radial-gradient(ellipse 70% 45% at 50% 28%,#fffdf6,transparent 70%),linear-gradient(180deg,#fbf3e2,#f7ead2 60%,#f3e2c4); display:flex; flex-direction:column; align-items:center; overflow:hidden; max-width:none}
 .ganesh-hero{width:min(380px,84vw); height:auto; position:relative; z-index:1; filter:drop-shadow(0 8px 18px rgba(156,106,31,.35))}
 .hero > *:not(.hero-bg):not(.flock){position:relative; z-index:1}
 .hero-bg{position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden}
 .hero-garland{position:absolute; top:0; left:0; width:100%; height:clamp(70px,12vw,120px); filter:drop-shadow(0 3px 4px rgba(120,60,10,.25))}
 .hero-arch{position:absolute; left:50%; top:clamp(40px,6vw,70px); bottom:0; transform:translateX(-50%); width:min(620px,96vw); height:calc(100% - clamp(40px,6vw,70px))}
-.hero-arch .arch-fill{fill:rgba(255,250,235,.55)}
-.hero-arch .arch-line{fill:none; stroke:var(--gold); stroke-width:2.2; vector-effect:non-scaling-stroke; opacity:.9}
+.hero-arch .arch-line{fill:none; stroke:var(--gold); stroke-width:2.2; vector-effect:non-scaling-stroke; opacity:.85}
 .hero-arch .arch-line.thin{stroke-width:1; opacity:.7}
-.hero-mandala{position:absolute; left:50%; top:clamp(110px,15vw,150px); width:min(560px,118vw); height:min(560px,118vw); margin-left:calc(min(560px,118vw) / -2); opacity:.55; animation:mandalaSpin 140s linear infinite}
-@keyframes mandalaSpin{to{transform:rotate(360deg)}}
+.ganesh-wrap{position:relative; display:inline-block; isolation:isolate}
+.hero-mandala{position:absolute; left:50%; top:46%; width:108%; aspect-ratio:1; transform:translate(-50%,-50%); z-index:-1; opacity:.5; animation:mandalaSpin 140s linear infinite}
+@keyframes mandalaSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.hero .monogram{margin-top:1.2rem}
 @media (prefers-reduced-motion:reduce){.hero-mandala{animation:none}}
 .shree{font-family:var(--caps); letter-spacing:.12em; font-size:1.05rem; text-transform:uppercase; color:var(--plum); margin-top:.4rem}
 .shloka{font-family:var(--hi); font-size:.95rem; opacity:.8; margin:.2rem 0 .4rem}
@@ -175,7 +177,7 @@ body.entered .hero .monogram{animation:monoIn 1.8s .2s cubic-bezier(.2,.8,.2,1) 
   filter:saturate(1.1) contrast(1.05); transform:scale(1.05); animation:kenburns 30s ease-in-out infinite alternate}
 @keyframes kenburns{to{transform:scale(1.15) translate(-2%,1%)}}
 .kashi::before{content:''; position:absolute; inset:0; z-index:-1;
-  background:linear-gradient(180deg,#cfe8f3 0%,rgba(207,232,243,.5) 10%,rgba(20,15,20,.45) 30%,rgba(20,15,20,.55) 75%,#c4e3f0 100%)}
+  background:linear-gradient(180deg,#f3e2c4 0%,rgba(243,226,196,.5) 10%,rgba(20,15,20,.45) 30%,rgba(20,15,20,.55) 75%,#f6ecd8 100%)}
 .kashi .watermark{position:absolute; width:min(460px,90vw); height:min(460px,90vw); top:50%; left:50%; transform:translate(-50%,-55%); opacity:.55;
   filter:drop-shadow(0 0 12px rgba(255,255,255,.6))}
 .kashi-text{position:relative; text-align:center; color:#fff; text-shadow:0 2px 14px rgba(0,0,0,.6); padding:1rem}
@@ -304,7 +306,8 @@ body.entered .hero .monogram{animation:monoIn 1.8s .2s cubic-bezier(.2,.8,.2,1) 
 .contact-cards{display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:1rem}
 .contact-card{background:rgba(255,255,255,.6); border:1px solid rgba(201,151,63,.55); border-radius:18px; padding:1rem 1.4rem; min-width:220px;
   box-shadow:0 10px 24px rgba(31,78,95,.12)}
-.contact-num{font-family:var(--caps); font-size:1.6rem; letter-spacing:.08em; color:var(--plum)}
+.contact-name{font-family:var(--script); font-size:1.9rem; line-height:1.2; color:var(--plum)}
+.contact-num{font-family:var(--caps); font-size:1.35rem; letter-spacing:.08em; color:var(--teal)}
 .contact-actions{display:flex; gap:.5rem; justify-content:center; margin-top:.5rem}
 
 /* ========== Heart scratch card ========== */
@@ -312,7 +315,7 @@ body.entered .hero .monogram{animation:monoIn 1.8s .2s cubic-bezier(.2,.8,.2,1) 
 .heart-wrap{position:relative; user-select:none; -webkit-user-select:none; width:min(330px,82vw); aspect-ratio:100/92; margin:1.6rem auto 1.2rem; filter:drop-shadow(0 14px 24px rgba(122,35,80,.25))}
 .heart-content,#scratch{position:absolute; inset:0; width:100%; height:100%;
   -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 92' preserveAspectRatio='none'%3E%3Cpath d='M50 88 C22 66 2 50 2 28 C2 12 14 2 28 2 C38 2 46 8 50 16 C54 8 62 2 72 2 C86 2 98 12 98 28 C98 50 78 66 50 88Z'/%3E%3C/svg%3E") center/100% 100% no-repeat; mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 92' preserveAspectRatio='none'%3E%3Cpath d='M50 88 C22 66 2 50 2 28 C2 12 14 2 28 2 C38 2 46 8 50 16 C54 8 62 2 72 2 C86 2 98 12 98 28 C98 50 78 66 50 88Z'/%3E%3C/svg%3E") center/100% 100% no-repeat}
-.heart-content{background:radial-gradient(ellipse at 50% 30%,#ffffff 0,#f1f9fc 38%,#d9eef7 72%,#c4e3f0 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; padding-bottom:16%}
+.heart-content{background:radial-gradient(ellipse at 50% 30%,#ffffff 0,#fffaf0 38%,#f8eedb 72%,#f1e2c4 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; padding-bottom:16%}
 .hc-kicker{font-family:var(--script); font-size:clamp(1.5rem,6vw,2rem); color:var(--plum); line-height:1.1}
 .hc-kicker .hi{font-family:'Yatra One',var(--hi); font-size:.75em}
 .hc-date{font-family:var(--caps); font-weight:700; font-size:clamp(1.15rem,4.6vw,1.45rem); color:var(--teal); margin-top:.2rem}

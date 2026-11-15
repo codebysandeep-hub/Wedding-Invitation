@@ -7,11 +7,11 @@
 <meta name="description" content="Wedding invitation of Sandeep Gupta & Divyanshi Jaiswal — 26 January 2027, Gautam Himtaj Resorts, Varanasi.">
 <meta property="og:title" content="Sandeep & Divyanshi — Shubh Vivah">
 <meta property="og:description" content="26 January 2027 · 8:00 PM · Gautam Himtaj Resorts, Varanasi">
-<meta name="theme-color" content="#cfe8f3">
+<meta name="theme-color" content="#f6ead2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&family=Marcellus&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 
@@ -108,11 +108,17 @@
     <div class="hero-bg" aria-hidden="true">
       <svg class="hero-garland" id="heroGarland" viewBox="0 0 1000 120" preserveAspectRatio="none"></svg>
       <svg class="hero-arch" viewBox="0 0 400 620" preserveAspectRatio="none">
-        <path class="arch-fill" d="M24 620V250Q24 150 110 105Q170 75 188 30Q200 6 212 30Q230 75 290 105Q376 150 376 250V620Z"/>
+        <defs>
+          <linearGradient id="archFill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffffff" stop-opacity=".55"/>
+            <stop offset=".55" stop-color="#eaf6fb" stop-opacity=".35"/>
+            <stop offset="1" stop-color="#f6ecd8" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <path class="arch-fill" fill="url(#archFill)" d="M24 620V250Q24 150 110 105Q170 75 188 30Q200 6 212 30Q230 75 290 105Q376 150 376 250V620Z"/>
         <path class="arch-line" d="M24 620V250Q24 150 110 105Q170 75 188 30Q200 6 212 30Q230 75 290 105Q376 150 376 250V620"/>
         <path class="arch-line thin" d="M40 620V254Q40 162 120 120Q178 90 194 50Q200 36 206 50Q222 90 280 120Q360 162 360 254V620"/>
       </svg>
-      <svg class="hero-mandala" id="heroMandala" viewBox="-200 -200 400 400"></svg>
     </div>
     <div class="flock" aria-hidden="true">
       <svg class="bird b1"><use href="#bird"/></svg>
@@ -123,7 +129,10 @@
       <svg class="bird b6"><use href="#bird"/></svg>
       <svg class="bird b7"><use href="#bird"/></svg>
     </div>
-    <img class="ganesh-hero" src="images/ganesh-colour.png" alt="Shree Ganesh">
+    <div class="ganesh-wrap">
+      <svg class="hero-mandala" id="heroMandala" viewBox="-200 -200 400 400" aria-hidden="true"></svg>
+      <img class="ganesh-hero" src="images/ganesh-colour.png" alt="Shree Ganesh">
+    </div>
     <p class="shree">|| Shree Ganeshaya Namah ||</p>
     <svg class="monogram" role="img" aria-label="S and D monogram"><use href="#monogram"/></svg>
     <p class="hero-names">
@@ -386,6 +395,7 @@
       <p class="caps small"><span class="en">For RSVP &amp; any queries, please contact</span></p>
       <div class="contact-cards">
         <div class="contact-card">
+          <p class="contact-name">Ashok Kumar Gupta</p>
           <p class="contact-num">6393017930</p>
           <div class="contact-actions">
             <a class="btn small" href="tel:+916393017930">📞 <span class="en">Call</span></a>
@@ -393,18 +403,18 @@
           </div>
         </div>
         <div class="contact-card">
-          <p class="contact-num">7599265585</p>
+          <p class="contact-name">Manju Gupta</p>
+          <p class="contact-num">8707037824</p>
           <div class="contact-actions">
-            <a class="btn small" href="tel:+917599265585">📞 <span class="en">Call</span></a>
-            <a class="btn small ghost" href="https://wa.me/917599265585" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn small" href="tel:+918707037824">📞 <span class="en">Call</span></a>
+            <a class="btn small ghost" href="https://wa.me/918707037824" target="_blank" rel="noopener">WhatsApp</a>
           </div>
         </div>
       </div>
     </div>
-    <button id="shareBtn" class="btn ghost"><span class="en">Share this invitation</span></button>
 </footer>
 </main>
 
-<script src="script.js"></script>
+<script src="script.js?v=7"></script>
 </body>
 </html>
