@@ -131,7 +131,7 @@ body.entered .hero .monogram{animation:monoIn 1.8s .2s cubic-bezier(.2,.8,.2,1) 
 
 /* ========== 1. Hero ========== */
 .hero{min-height:100vh; text-align:center; padding-top:3.2rem; display:flex; flex-direction:column; align-items:center; overflow:hidden; max-width:none}
-.ganesh-hero{width:150px; height:auto; filter:drop-shadow(0 2px 6px rgba(156,106,31,.25))}
+.ganesh-hero{width:min(260px,68vw); height:auto; filter:drop-shadow(0 6px 14px rgba(156,106,31,.3))}
 .shree{font-family:var(--caps); letter-spacing:.12em; font-size:1.05rem; text-transform:uppercase; color:var(--plum); margin-top:.4rem}
 .shloka{font-family:var(--hi); font-size:.95rem; opacity:.8; margin:.2rem 0 .4rem}
 .hero .monogram{width:min(330px,80vw); height:min(330px,80vw); filter:drop-shadow(0 6px 14px rgba(156,106,31,.25))}
