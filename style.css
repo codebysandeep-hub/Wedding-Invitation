@@ -130,8 +130,18 @@ body.entered .hero .monogram{animation:monoIn 1.8s .2s cubic-bezier(.2,.8,.2,1) 
 @keyframes monoIn{to{opacity:1; transform:none}}
 
 /* ========== 1. Hero ========== */
-.hero{min-height:100vh; text-align:center; padding-top:3.2rem; display:flex; flex-direction:column; align-items:center; overflow:hidden; max-width:none}
-.ganesh-hero{width:min(260px,68vw); height:auto; filter:drop-shadow(0 6px 14px rgba(156,106,31,.3))}
+.hero{min-height:100vh; text-align:center; padding-top:clamp(4.5rem,9vw,6rem); display:flex; flex-direction:column; align-items:center; overflow:hidden; max-width:none}
+.ganesh-hero{width:min(380px,84vw); height:auto; position:relative; z-index:1; filter:drop-shadow(0 8px 18px rgba(156,106,31,.35))}
+.hero > *:not(.hero-bg):not(.flock){position:relative; z-index:1}
+.hero-bg{position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden}
+.hero-garland{position:absolute; top:0; left:0; width:100%; height:clamp(70px,12vw,120px); filter:drop-shadow(0 3px 4px rgba(120,60,10,.25))}
+.hero-arch{position:absolute; left:50%; top:clamp(40px,6vw,70px); bottom:0; transform:translateX(-50%); width:min(620px,96vw); height:calc(100% - clamp(40px,6vw,70px))}
+.hero-arch .arch-fill{fill:rgba(255,250,235,.55)}
+.hero-arch .arch-line{fill:none; stroke:var(--gold); stroke-width:2.2; vector-effect:non-scaling-stroke; opacity:.9}
+.hero-arch .arch-line.thin{stroke-width:1; opacity:.7}
+.hero-mandala{position:absolute; left:50%; top:clamp(110px,15vw,150px); width:min(560px,118vw); height:min(560px,118vw); margin-left:calc(min(560px,118vw) / -2); opacity:.55; animation:mandalaSpin 140s linear infinite}
+@keyframes mandalaSpin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.hero-mandala{animation:none}}
 .shree{font-family:var(--caps); letter-spacing:.12em; font-size:1.05rem; text-transform:uppercase; color:var(--plum); margin-top:.4rem}
 .shloka{font-family:var(--hi); font-size:.95rem; opacity:.8; margin:.2rem 0 .4rem}
 .hero .monogram{width:min(330px,80vw); height:min(330px,80vw); filter:drop-shadow(0 6px 14px rgba(156,106,31,.25))}

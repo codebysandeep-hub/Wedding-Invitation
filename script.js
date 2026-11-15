@@ -321,6 +321,60 @@
     for (let x = 10; x < 600; x += 22) el('circle', { class: 'twinkle', cx: x, cy: 198, r: 1.8 }, lights);
   });
 
+  /* ---------------- Hero mandala halo ---------------- */
+  (function buildHeroMandala() {
+    const svg = $('#heroMandala');
+    if (!svg) return;
+    const defs = el('defs', {}, svg);
+    const grad = el('radialGradient', { id: 'heroGlow' }, defs);
+    el('stop', { offset: '0', 'stop-color': '#fff6d8', 'stop-opacity': '.95' }, grad);
+    el('stop', { offset: '.55', 'stop-color': '#f8dfa0', 'stop-opacity': '.45' }, grad);
+    el('stop', { offset: '1', 'stop-color': '#f1d48e', 'stop-opacity': '0' }, grad);
+    el('circle', { r: 200, fill: 'url(#heroGlow)' }, svg);
+    const g = el('g', { fill: 'none', stroke: '#c9973f', 'stroke-width': 1.2 }, svg);
+    [62, 104, 146, 176, 192].forEach((r, i) => el('circle', { r, 'stroke-width': i === 4 ? 0.8 : 1.2 }, g));
+    const ring = (n, r0, r1, w, extra = {}, off = 0) => {
+      for (let i = 0; i < n; i++) {
+        const a = (360 / n) * i + off;
+        el('path', { d: `M0 ${-r0} Q${w} ${-(r0 + r1) / 2} 0 ${-r1} Q${-w} ${-(r0 + r1) / 2} 0 ${-r0}Z`, transform: `rotate(${a})`, ...extra }, g);
+      }
+    };
+    ring(12, 20, 60, 13, { fill: 'rgba(241,212,142,.35)' });
+    ring(16, 62, 104, 15, { fill: 'rgba(255,250,235,.5)' });
+    ring(16, 66, 96, 7, {}, 11.25);
+    ring(32, 104, 144, 8, { fill: 'rgba(241,212,142,.25)' });
+    for (let i = 0; i < 64; i++) {
+      const a = ((360 / 64) * i * Math.PI) / 180;
+      el('circle', { cx: Math.sin(a) * 161, cy: -Math.cos(a) * 161, r: i % 2 ? 1.6 : 3, fill: '#c9973f', stroke: 'none' }, g);
+    }
+    for (let i = 0; i < 48; i++) {
+      el('line', { x1: 0, y1: -178, x2: 0, y2: -190, transform: `rotate(${7.5 * i})`, 'stroke-width': 1 }, g);
+    }
+  })();
+
+  /* ---------------- Hero marigold garland ---------------- */
+  (function buildHeroGarland() {
+    const svg = $('#heroGarland');
+    if (!svg) return;
+    const cols = ['#f39c12', '#f7c531', '#e67e22', '#f7c531'];
+    const swags = 4, W = 1000 / swags;
+    for (let s = 0; s < swags; s++) {
+      const x0 = s * W, sag = 62;
+      for (let i = 0; i <= 26; i++) {
+        const t = i / 26, x = x0 + W * t, y = 8 + sag * 4 * t * (1 - t);
+        el('ellipse', { cx: x, cy: y, rx: 8, ry: 7, fill: cols[i % cols.length] }, svg);
+      }
+      if (s > 0) {
+        for (let j = 0; j < 9; j++) el('ellipse', { cx: x0, cy: 12 + j * 10, rx: 6, ry: 5.5, fill: cols[(j + 1) % cols.length] }, svg);
+        el('path', { d: `M${x0 - 6} 104 L${x0 + 6} 104 L${x0} 116Z`, fill: '#c9973f' }, svg);
+      }
+    }
+    for (let i = 0; i <= swags; i++) {
+      el('circle', { cx: i * W, cy: 8, r: 10, fill: '#7a2350' }, svg);
+      el('circle', { cx: i * W, cy: 8, r: 4, fill: '#f1d48e' }, svg);
+    }
+  })();
+
   /* ---------------- Monogram wreath leaves ---------------- */
   (function buildMonogram() {
     const g = $('#monoLeaves');
