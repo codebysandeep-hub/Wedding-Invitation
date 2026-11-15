@@ -357,7 +357,7 @@
     const svg = $('#heroGarland');
     if (!svg) return;
     const cols = ['#f39c12', '#f7c531', '#e67e22', '#f7c531'];
-    const swags = 4, W = 1000 / swags;
+    const swags = innerWidth > 700 ? 5 : 3, W = 1000 / swags;
     for (let s = 0; s < swags; s++) {
       const x0 = s * W, sag = 62;
       for (let i = 0; i <= 26; i++) {

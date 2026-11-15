@@ -130,29 +130,29 @@ body.entered .hero .monogram{animation:monoIn 1.8s .2s cubic-bezier(.2,.8,.2,1) 
 @keyframes monoIn{to{opacity:1; transform:none}}
 
 /* ========== 1. Hero ========== */
-.hero{min-height:100vh; text-align:center; padding-top:clamp(4.5rem,9vw,6rem);
+.hero{min-height:100vh; min-height:100svh; text-align:center; padding-top:clamp(3.6rem,min(9vw,11vh),6rem); padding-bottom:1rem;
   background:radial-gradient(ellipse 70% 45% at 50% 28%,#fffdf6,transparent 70%),linear-gradient(180deg,#fbf3e2,#f7ead2 60%,#f3e2c4); display:flex; flex-direction:column; align-items:center; overflow:hidden; max-width:none}
-.ganesh-hero{width:min(380px,84vw); height:auto; position:relative; z-index:1; filter:drop-shadow(0 8px 18px rgba(156,106,31,.35))}
+.ganesh-hero{width:min(380px,84vw,36vh); width:min(380px,84vw,36svh); height:auto; position:relative; z-index:1; filter:drop-shadow(0 8px 18px rgba(156,106,31,.35))}
 .hero > *:not(.hero-bg):not(.flock){position:relative; z-index:1}
 .hero-bg{position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden}
-.hero-garland{position:absolute; top:0; left:0; width:100%; height:clamp(70px,12vw,120px); filter:drop-shadow(0 3px 4px rgba(120,60,10,.25))}
+.hero-garland{position:absolute; top:0; left:0; width:100%; height:clamp(60px,min(12vw,13vh),120px); filter:drop-shadow(0 3px 4px rgba(120,60,10,.25))}
 .hero-arch{position:absolute; left:50%; top:clamp(40px,6vw,70px); bottom:0; transform:translateX(-50%); width:min(620px,96vw); height:calc(100% - clamp(40px,6vw,70px))}
 .hero-arch .arch-line{fill:none; stroke:var(--gold); stroke-width:2.2; vector-effect:non-scaling-stroke; opacity:.85}
 .hero-arch .arch-line.thin{stroke-width:1; opacity:.7}
 .ganesh-wrap{position:relative; display:inline-block; isolation:isolate}
 .hero-mandala{position:absolute; left:50%; top:46%; width:108%; aspect-ratio:1; transform:translate(-50%,-50%); z-index:-1; opacity:.5; animation:mandalaSpin 140s linear infinite}
 @keyframes mandalaSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}
-.hero .monogram{margin-top:1.2rem}
+.hero .monogram{margin-top:clamp(.4rem,2vh,1.2rem)}
 @media (prefers-reduced-motion:reduce){.hero-mandala{animation:none}}
 .shree{font-family:var(--caps); letter-spacing:.12em; font-size:1.05rem; text-transform:uppercase; color:var(--plum); margin-top:.4rem}
 .shloka{font-family:var(--hi); font-size:.95rem; opacity:.8; margin:.2rem 0 .4rem}
-.hero .monogram{width:min(330px,80vw); height:min(330px,80vw); filter:drop-shadow(0 6px 14px rgba(156,106,31,.25))}
-.hero-names{font-family:var(--script); color:var(--plum); font-size:clamp(2.2rem,8vw,3.4rem); line-height:1.2; margin-top:.4rem}
+.hero .monogram{width:min(330px,80vw,25vh); height:min(330px,80vw,25vh); width:min(330px,80vw,25svh); height:min(330px,80vw,25svh); filter:drop-shadow(0 6px 14px rgba(156,106,31,.25))}
+.hero-names{font-family:var(--script); color:var(--plum); font-size:clamp(2rem,min(8vw,6.5vh),3.4rem); line-height:1.25; margin-top:.3rem; padding:0 .6rem .1em; white-space:nowrap}
 .hero-names i{font-style:normal; color:var(--gold)}
 .hero-names .hi{font-family:'Yatra One',var(--hi); font-size:.75em}
 .hero-date{font-family:var(--caps); letter-spacing:.3em; color:var(--teal); margin-top:.4rem; font-size:1.1rem}
 .hero-date .hi{font-family:var(--hi); letter-spacing:0; font-size:1.2rem}
-.scroll-cue{margin-top:1.6rem; width:28px; height:46px; border:2px solid var(--teal-l); border-radius:20px; position:relative}
+.scroll-cue{margin-top:clamp(.5rem,2vh,1.6rem); width:28px; height:46px; border:2px solid var(--teal-l); border-radius:20px; position:relative}
 .scroll-cue span{position:absolute; left:50%; top:8px; width:4px; height:8px; margin-left:-2px; background:var(--teal-l); border-radius:2px; animation:cue 1.6s infinite}
 @keyframes cue{to{transform:translateY(16px); opacity:0}}
 
